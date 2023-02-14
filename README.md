@@ -24,5 +24,6 @@ cargo build
 ## Run
 
 ```bash
-RUST_LOG=info cargo xtask run
-```
+ cargo xtask build-ebpf && cargo build && sudo RUST_LOG=debug ./target/debug/first-rewrite --src 8081 --dst 8082
+ ```
+Note: for OS's other than Ubuntu 22.10 you may need to pass a different `--cgroup-path`.
